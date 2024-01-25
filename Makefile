@@ -6,7 +6,7 @@
 #    By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/16 10:09:12 by fcarranz          #+#    #+#              #
-#    Updated: 2024/01/25 19:53:22 by fcarranz         ###   ########.fr        #
+#    Updated: 2024/01/25 20:53:56 by fcarranz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJECTS = ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	ar rcs $(NAME) $(OBJECTS) libft.h
+	ar rcs $(NAME) $(OBJECTS)
 
 %.o: %.c libft.h Makefile
 	cc $(CFLAGS) -c $< -o $@
