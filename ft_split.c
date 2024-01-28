@@ -6,23 +6,23 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:14:59 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/01/25 10:25:21 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/01/28 13:24:10 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_free_arrays(char **ret, int i)
+static int	ft_free_arrays(char **splited, int i)
 {
 	while (i != 0)
-		free(ret[--i]);
+		free(splited[--i]);
 	return (0);
 }
 
-static int	ft_fill_array(char **ret, const char *str, char c)
+static int	ft_fill_array(char **splited, const char *str, char c)
 {
-	int		len;
-	int		i;
+	size_t	len;
+	size_t	i;
 
 	i = 0;
 	while (*str)
@@ -37,10 +37,10 @@ static int	ft_fill_array(char **ret, const char *str, char c)
 		}
 		if (len)
 		{
-			ret[i] = (char *)malloc(sizeof(char) * (len + 1));
-			if (!ret[i])
-				return (ft_free_arrays(ret, i));
-			ft_strlcpy(ret[i], str - len, len + 1);
+			splited[i] = (char *)malloc(sizeof(char) * (len + 1));
+			if (!splited[i])
+				return (ft_free_arrays(splited, i));
+			ft_strlcpy(splited[i], str - len, len + 1);
 			++i;
 		}
 	}
@@ -69,14 +69,14 @@ static int	ft_count_str(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	int		count_str;
-	char	**ret;
+	char	**splited;
 
 	count_str = ft_count_str(s, c);
-	ret = malloc(sizeof(char *) * (count_str + 1));
-	if (!ret)
+	splited = malloc(sizeof(char *) * (count_str + 1));
+	if (!splited)
 		return (0);
-	ret[count_str] = 0;
-	if (ft_fill_array(ret, s, c))
-		return (ret);
-	return (0);
+	splited[count_str] = NULL;
+	if (ft_fill_array(splited, s, c))
+		return (splited);
+	return (NULL);
 }
