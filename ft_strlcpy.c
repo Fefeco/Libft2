@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 18:44:12 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/01/27 11:35:22 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/01/28 12:22:19 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		*dst = '\0';
 	}
-	while (*src++)
+	while (*src)
+	{
 		++total_len;
+		++src;
+	}
 	return (total_len);
 }
