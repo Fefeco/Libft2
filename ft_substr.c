@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 19:21:25 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/01/23 14:37:26 by fedeito          ###   ########.fr       */
+/*   Updated: 2024/01/28 10:31:15 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ptr;
 
-	if (ft_strlen(s) < start)
+	if (start > ft_strlen(s))
 	{
 		len = 0;
 		start = 0;
