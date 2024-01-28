@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:31:39 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/01/25 13:57:54 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/01/28 11:14:46 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	ret;
+	size_t	len;
 
-	ret = 0;
-	while (s[ret])
-		ret++;
-	return (ret);
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }
