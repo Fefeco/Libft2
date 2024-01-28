@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:14:59 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/01/28 13:35:50 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/01/28 22:46:02 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,36 @@
 
 static int	ft_free_arrays(char **splited, int i)
 {
-	while (i != 0)
-		free(splited[--i]);
+	while (i >= 0)
+	{
+		free(splited[i]);
+		--i;
+	}
 	return (0);
 }
 
-static int	ft_fill_array(char **splited, const char *str, char c)
+static int	ft_fill_array(char **splited, const char *s, char c)
 {
 	size_t	len;
 	size_t	i;
 
 	i = 0;
-	while (*str)
+	while (*s)
 	{
 		len = 0;
-		while (*str && *str == c)
-			++str;
-		while (*str && *str != c)
+		while (*s && *s == c)
+			++s;
+		while (*s && *s != c)
 		{
 			++len;
-			++str;
+			++s;
 		}
 		if (len)
 		{
 			splited[i] = (char *)malloc(sizeof(char) * (len + 1));
 			if (!splited[i])
 				return (ft_free_arrays(splited, i));
-			ft_strlcpy(splited[i], str - len, len + 1);
+			ft_strlcpy(splited[i], s - len, len + 1);
 			++i;
 		}
 	}
