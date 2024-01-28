@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:14:59 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/01/28 13:24:10 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/01/28 13:35:50 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ char	**ft_split(char const *s, char c)
 	int		count_str;
 	char	**splited;
 
+	if (!s)
+		return (NULL);
 	count_str = ft_count_str(s, c);
 	splited = malloc(sizeof(char *) * (count_str + 1));
 	if (!splited)
