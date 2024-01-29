@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 12:04:07 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/01/28 22:27:33 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/01/29 11:00:36 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n / 10, fd);
 	}
 	if (n <= 9)
-		write(fd, "0123456789" + n, 1);
+		write(fd, &"0123456789"[n], 1);
 	else
-		write(fd, "0123456789" + c, 1);
+		write(fd, &"0123456789"[c], 1);
 }
