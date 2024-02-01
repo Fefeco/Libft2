@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 20:23:58 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/02/01 11:23:04 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:48:57 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new_lst = NULL;
 	while (lst)
 	{
-		tmp = ft_lstnew(ft_strdup(lst->content));
+		tmp = ft_lstnew(lst->content);
 		if (!tmp)
 		{
 			ft_lstclear(&new_lst, del);
