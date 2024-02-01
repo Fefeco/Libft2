@@ -6,7 +6,7 @@
 #    By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/16 10:09:12 by fcarranz          #+#    #+#              #
-#    Updated: 2024/01/31 19:13:37 by fcarranz         ###   ########.fr        #
+#    Updated: 2024/02/01 09:47:42 by fcarranz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ OBJECTS = ft_atoi.o ft_bzero.o \
 BONUS_OBJECTS = ft_lstnew.o ft_lstadd_front.o \
 				ft_lstsize.o ft_lstlast.o \
 				ft_lstadd_back.o ft_lstdelone.o \
-				ft_lstclear.o ft_lstiter.o
+				ft_lstclear.o ft_lstiter.o \
+				ft_lstmap.o
 
 .PHONY: all clean fclean re
 
