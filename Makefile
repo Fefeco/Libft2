@@ -6,7 +6,7 @@
 #    By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/16 10:09:12 by fcarranz          #+#    #+#              #
-#    Updated: 2024/02/01 09:47:42 by fcarranz         ###   ########.fr        #
+#    Updated: 2024/02/01 21:22:44 by fcarranz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,11 +29,11 @@ OBJECTS = ft_atoi.o ft_bzero.o \
 		  ft_strmapi.o ft_striteri.o \
 		  ft_putchar_fd.o ft_putstr_fd.o \
 		  ft_putendl_fd.o ft_putnbr_fd.o
-BONUS_OBJECTS = ft_lstnew.o ft_lstadd_front.o \
-				ft_lstsize.o ft_lstlast.o \
-				ft_lstadd_back.o ft_lstdelone.o \
-				ft_lstclear.o ft_lstiter.o \
-				ft_lstmap.o
+BONUS_OBJECTS = ft_lstnew_bonus.o ft_lstadd_front_bonus.o \
+				ft_lstsize_bonus.o ft_lstlast_bonus.o \
+				ft_lstadd_back_bonus.o ft_lstdelone_bonus.o \
+				ft_lstclear_bonus.o ft_lstiter_bonus.o \
+				ft_lstmap_bonus.o
 
 .PHONY: all clean fclean re
 
@@ -46,7 +46,7 @@ $(NAME): $(OBJECTS)
 	cc $(CFLAGS) -c $< -o $@
 
 clean: 
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(BONUS_OBJECTS) bonus
 
 fclean:	clean
 	rm -f $(NAME)
@@ -55,3 +55,4 @@ re:	fclean all
 
 bonus: $(BONUS_OBJECTS)
 	ar rcs $(NAME) $(BONUS_OBJECTS)
+	@touch $@

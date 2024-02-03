@@ -6,7 +6,7 @@
 /*   By: fcarranz <fcarranz@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:14:59 by fcarranz          #+#    #+#             */
-/*   Updated: 2024/01/28 22:46:02 by fcarranz         ###   ########.fr       */
+/*   Updated: 2024/02/01 20:54:14 by fcarranz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static int	ft_free_arrays(char **splited, int i)
 		free(splited[i]);
 		--i;
 	}
+	free(splited);
 	return (0);
 }
 
