@@ -13,15 +13,12 @@
 CC = gcc
 NAME = libft.a
 CFLAGS = -Wall -Werror -Wextra -MMD
-HEADER = $(INC_DIR)libft.h
+HEADER = libft.h
 
 #### DIRECTORIES ####
-SRC_DIR = src/
-SRC_BONUS_DIR = $(SRC_DIR)bonus/
 OBJ_DIR = obj/
 OBJ_BONUS_DIR = $(OBJ_DIR)bonus/
 DEP_DIR = dep/
-INC_DIR = inc/
 #####################
 
 OBJECTS = $(addprefix $(OBJ_DIR), $(SRC_FILES:.c=.o))
@@ -87,14 +84,14 @@ bonus: $(BONUS_OBJECTS) $(HEADER) Makefile
 	ar rcs $(NAME) $(BONUS_OBJECTS)
 	@touch bonus
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+$(OBJ_DIR)%.o: %.c
 	@mkdir -p $(OBJ_DIR) $(DEP_DIR)
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 	@mv $(OBJ_DIR)$*.d $(DEP_DIR)
 
-$(OBJ_BONUS_DIR)%.o: $(SRC_DIR)%.c
+$(OBJ_BONUS_DIR)%.o: %.c
 	@mkdir -p $(OBJ_BONUS_DIR) $(DEP_DIR)
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 	mv $(OBJ_BONUS_DIR)$*.d $(DEP_DIR)
 
 clean:
